@@ -1,0 +1,229 @@
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd, ul {
+  margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+  }
+  /* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* General STYLE */
+:root {
+
+    --color1:hsl(0, 0%, 100%);
+    --color2:hsl(217, 12%, 63%);
+    --color3:hsl(216, 12%, 54%);
+    --color4:hsl(213, 19%, 18%);
+    --color5:hsl(216, 12%, 8%);
+
+    --colorparagraph: var(--color1);
+    --accent:hsl(25, 97%, 53%);
+    --ffparagraph: 'Overpass', sans-serif;
+    --fsparagraph: 0.88rem;
+}
+body {
+    padding:0em;
+    font-family: var(--ffparagraph);
+    text-rendering: optimizeSpeed;
+    text-align:left; 
+    background: #141519;
+    /* to stick the footer to the bottom */
+    min-height: 100vh;  
+    display:flex; flex-direction:column; 
+}
+h1, h2, h3, ul {
+    padding:0;
+}
+main {
+    max-width: 20.438rem;
+    margin:auto;
+    background:var(--bg2);
+}
+
+/* Rating section */
+
+section#rating, #thankyou {
+  background: linear-gradient(180deg, hsl(213, 19%, 18%), #171e28);
+  border-radius: 1rem;
+  padding:1.5rem;
+}
+h1 {
+  font-size:1.57rem;
+  line-height:2.6rem;
+  color: var(--color1);
+  font-weight:400;
+}
+p {
+  color: var(--color2);
+  font-size: var(--fsparagraph);
+  line-height:1.4rem;
+  font-weight:400;
+  margin:0.3rem 0 1.5rem 0;
+}
+.icon-holder {
+  background:#29323b;
+  border-radius:3rem;
+  width: 2.625rem;
+  height: 2.625rem;
+  text-align:center;
+  padding:0.6rem;
+  margin-bottom:1rem;
+}
+.icon-holder img {
+  width:1.1rem;
+  vertical-align: middle;
+}
+.radio-holder {
+  display:grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap:1rem;
+}
+.radio-input {
+  display:none;
+}
+.radio-label {
+  color: var(--color2);
+  font-size: var(--fsparagraph);
+  line-height:1.5rem;
+  font-weight:400;
+  background:#29323b;
+  border-radius:3rem;
+  width: 2.625rem;
+  height: 2.625rem;
+  text-align:center;
+  padding:0.6rem;
+  cursor:pointer;
+  transition: background 0.1s;
+}
+.radio-label:hover, .radio-input:hover {
+  color: var(--color1);
+  background: var(--accent);
+}
+.radio-input:checked + .radio-label {
+  background:var(--color3);
+  color:var(--color1);
+}
+#submit{
+  width:100%;
+  background:var(--accent);
+  font-size:var(--fsparagraph);
+  color: var(--color1);
+  letter-spacing: 0.15rem;
+  padding:0.8rem;
+  text-transform: uppercase;
+  border:none;
+  border-radius:3rem;
+  margin:1.2rem 0 0.5rem 0;
+  cursor:pointer;
+  transition: background 0.1s;
+}
+#submit:hover, #submit:focus {
+  background: var(--color1);
+  color: var(--accent);
+}
+
+/* Thank you section */
+
+section#thankyou {
+  display:none;
+  text-align:center;
+}
+.thankyou-image-holder {
+  width:100%;
+  text-align:center;
+  margin-top:0.7rem;
+}
+.thankyou-image-holder img {
+  height:6.125rem;
+  width:auto;
+}
+.ratingTextHolder {
+  background:#29323b;
+  border-radius:3rem;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  margin-top: 1.3rem;
+}
+h3 {
+  color: var(--accent);
+  font-size:var(--fsparagraph);
+  font-weight:400;
+}
+h2 {
+  color: var(--color1);
+  margin:1.6rem 0 0.8rem 0;
+  font-weight:400;
+  font-size: 1.5em;
+}
+
+
+footer { font-size: 11px; text-align: center; color: var(--color3); }
+footer a { color: var(--color3); }
+
+@media screen and (min-width:40rem) {
+  body {
+    padding:0 1rem;
+  }
+  main {
+    max-width: 25.75rem;
+  }
+  section#rating, #thankyou {
+    border-radius:1.8rem;
+    padding:2.063rem;
+  }
+  h1 {
+    font-size:1.8rem;
+  }
+  p, .radio-label {
+    font-size:0.95rem;
+  }
+  p {
+    margin:0.4rem 0 1.7rem 0;
+    line-height:1.5rem;
+  }
+  .icon-holder, .radio-label {
+    width:3.05rem;
+    height:3.05rem;
+    padding: 0.8rem;
+  }
+  .icon-holder {
+    margin-bottom:1.5rem;
+  }
+  .icon-holder img {
+    width: 1.05rem;
+    height:1.05rem;
+  }
+  #submit {
+    margin-top:1.9rem;
+    font-size:0.95rem;
+  }
+  .thankyou-image-holder img {
+    height:6.813rem;
+    width:auto;
+  }
+  .ratingTextHolder {
+    padding: 0.5rem 1.2rem;
+  }
+  h2 {
+    font-size: 1.72rem;
+    margin:2rem 0 0.8rem 0;
+  }
+  h3 {
+    font-size:1rem;
+  }
+  #thankyou p {
+    margin-bottom:1rem;
+  }
+}
