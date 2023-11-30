@@ -3,28 +3,28 @@ var sectionRating = document.getElementById('rating');
 var sectionThankyou = document.getElementById('thankyou');
 var ratingNumber = document.getElementById('ratingNumber');
 
+var activeRadio;
+var arrayRadios = [];
 
-    submitBtn.addEventListener('click', function() {
-        if(document.getElementById('radio1').checked) {
-            var checkedRadio = 1;
-          }
-          else if(document.getElementById('radio2').checked) {
-            checkedRadio = 2;
-          }
-          else if(document.getElementById('radio3').checked) {
-            checkedRadio = 3;
-          }
-          else if(document.getElementById('radio4').checked) {
-            checkedRadio = 4;
-          }
-          else if(document.getElementById('radio5').checked) {
-            checkedRadio = 5;
-          }
-          else {
-            alert('Please select one option');
-          }
+for(var i = 1; i < 6; i++){
+    var radio = document.getElementById('radio' + i);
+    arrayRadios.push(radio);
+}
 
-    ratingNumber.innerHTML = checkedRadio;
+for(var i = 0; i < arrayRadios.length; i++){
+
+    // console.log(arrayRadios[i].value);
+
+    arrayRadios[i].onclick = function(){
+        activeRadio = this.value;
+        // console.log(activeRadio);
+        return activeRadio;
+    }
+}
+
+submitBtn.addEventListener('click', function() {
+
+    ratingNumber.innerHTML = activeRadio;
     sectionRating.style.display = 'none';
     sectionThankyou.style.display = 'block';
 
