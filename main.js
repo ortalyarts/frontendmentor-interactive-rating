@@ -4,12 +4,7 @@ var sectionThankyou = document.getElementById('thankyou');
 var ratingNumber = document.getElementById('ratingNumber');
 
 var activeRadio;
-var arrayRadios = [];
-
-for(var i = 1; i < 6; i++){
-    var radio = document.getElementById('radio' + i);
-    arrayRadios.push(radio);
-}
+var arrayRadios = document.querySelectorAll('.radio-input');
 
 for(var i = 0; i < arrayRadios.length; i++){
 
