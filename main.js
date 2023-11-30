@@ -18,9 +18,13 @@ for(var i = 0; i < arrayRadios.length; i++){
 }
 
 submitBtn.addEventListener('click', function() {
-
-    ratingNumber.innerHTML = activeRadio;
+    if(activeRadio){
+        ratingNumber.innerHTML = activeRadio;
     sectionRating.style.display = 'none';
     sectionThankyou.style.display = 'block';
+    }
+    else {
+        alert('Please select one option.');
+    }
 
 })
